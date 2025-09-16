@@ -1,1 +1,158 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"><style type="text/css">ol{margin:0;padding:0}table td,table th{padding:0}.c0{color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:"Arial";font-style:normal}.c1{padding-top:0pt;padding-bottom:0pt;line-height:1.15;orphans:2;widows:2;text-align:left}.c3{background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt}.c2{height:11pt}.title{padding-top:0pt;color:#000000;font-size:26pt;padding-bottom:3pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}.subtitle{padding-top:0pt;color:#666666;font-size:15pt;padding-bottom:16pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}li{color:#000000;font-size:11pt;font-family:"Arial"}p{margin:0;color:#000000;font-size:11pt;font-family:"Arial"}h1{padding-top:20pt;color:#000000;font-size:20pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h2{padding-top:18pt;color:#000000;font-size:16pt;padding-bottom:6pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h3{padding-top:16pt;color:#434343;font-size:14pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h4{padding-top:14pt;color:#666666;font-size:12pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h5{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;orphans:2;widows:2;text-align:left}h6{padding-top:12pt;color:#666666;font-size:11pt;padding-bottom:4pt;font-family:"Arial";line-height:1.15;page-break-after:avoid;font-style:italic;orphans:2;widows:2;text-align:left}</style></head><body class="c3 doc-content"><p class="c1"><span class="c0">&lt;!DOCTYPE html&gt;</span></p><p class="c1"><span class="c0">&lt;html lang=&quot;en&quot;&gt;</span></p><p class="c1"><span class="c0">&lt;head&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;title&gt;Bill Tracker&lt;/title&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;style&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; body { background:#000; color:#fff; font-family: system-ui, sans-serif; margin:0; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .wrap { max-width:900px; margin:30px auto; padding:0 16px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; h1 { font-size:1.6rem; margin-bottom:6px; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:end}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .controls input,.controls select{background:#0a1128;color:#fff;border:1px solid #333;border-radius:8px;padding:8px 10px;font-size:14px;min-width:96px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn{background:#ee3a4a;color:#fff;border:none;padding:8px 14px;border-radius:8px;font-weight:700;cursor:pointer}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .btn.outline{background:transparent;border:1px solid #333}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .chip{display:inline-flex;align-items:center;gap:6px;background:#16171b;border:1px solid #333;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;text-transform:uppercase}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .chip.ok{border-color:#2ecc71;color:#b7ffcb}.chip.bad{border-color:#e74c3c;color:#ffc7c7}.chip.warn{border-color:#f39c12;color:#ffe5b7}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .barwrap{background:#090d18;border:1px solid #333;border-radius:999px;overflow:hidden;height:8px;margin:10px 0}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .bar{background:linear-gradient(90deg,#ee3a4a,#ff6a77);height:8px;width:0;transition:width .6s ease}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .meta{color:#a5aab4;font-size:14px;margin:8px 0}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .topic{background:#0f1424;border:1px solid #333;border-radius:999px;padding:4px 10px;font-size:12px;color:#dbe6ff}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .comm-wrap{position:relative;margin-top:8px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .comm-list{display:grid;gap:6px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .committee{line-height:1.35}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .committee .subs{margin-left:14px;color:#a5aab4;font-size:13px;display:grid;gap:4px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .badge{display:inline-block;font-size:11px;padding:2px 6px;border:1px solid #333;border-radius:999px;margin-right:6px;background:#0f1424}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .badge.house{border-color:rgba(59,130,246,.5)}.badge.senate{border-color:rgba(239,68,68,.5)}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .collapse{max-height:120px;overflow:hidden;position:relative}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .collapse.fade:after{content:&quot;&quot;;position:absolute;left:0;right:0;bottom:0;height:48px;background:linear-gradient(180deg,rgba(0,0,0,0),#000)}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .toggle{margin-top:8px;font-size:12px;color:#7ab8ff;cursor:pointer;user-select:none}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .list{margin-top:12px;display:grid;gap:6px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; .action{font-size:14px;border-bottom:1px solid #222;padding-bottom:6px;margin-bottom:6px}</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; a{color:#7ab8ff;text-decoration:none}</span></p><p class="c1"><span class="c0">&nbsp; &lt;/style&gt;</span></p><p class="c1"><span class="c0">&lt;/head&gt;</span></p><p class="c1"><span class="c0">&lt;body&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;div class=&quot;wrap&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;h1 id=&quot;billTitle&quot;&gt;Bill Tracker&lt;/h1&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;controls&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;input id=&quot;congressInput&quot; type=&quot;number&quot; value=&quot;118&quot; min=&quot;100&quot; max=&quot;999&quot; title=&quot;Congress&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;select id=&quot;billType&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;option value=&quot;hr&quot;&gt;HR&lt;/option&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;option value=&quot;hjres&quot;&gt;HJRes&lt;/option&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;option value=&quot;sjres&quot;&gt;SJRes&lt;/option&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &lt;option value=&quot;s&quot;&gt;S&lt;/option&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;/select&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;input id=&quot;billNumber&quot; type=&quot;number&quot; placeholder=&quot;Bill number&quot; /&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;button class=&quot;btn&quot; id=&quot;trackBtn&quot;&gt;Track&lt;/button&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;button class=&quot;btn outline&quot; id=&quot;copyLinkBtn&quot;&gt;Copy link&lt;/button&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;chip warn&quot; id=&quot;statusChip&quot;&gt;&mdash;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;barwrap&quot;&gt;&lt;div class=&quot;bar&quot; id=&quot;bar&quot;&gt;&lt;/div&gt;&lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;meta&quot; id=&quot;summary&quot;&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;topics&quot; id=&quot;topics&quot;&gt;&lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;list&quot;&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;strong&gt;Sponsor:&lt;/strong&gt; &lt;span id=&quot;sponsor&quot;&gt;&mdash;&lt;/span&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;strong&gt;Party:&lt;/strong&gt; &lt;span id=&quot;party&quot;&gt;&mdash;&lt;/span&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;strong&gt;Cosponsors:&lt;/strong&gt; &lt;span id=&quot;cosponsors&quot;&gt;&mdash;&lt;/span&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;strong&gt;Committees:&lt;/strong&gt; &lt;div id=&quot;committees&quot;&gt;&mdash;&lt;/div&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;strong&gt;Last Updated:&lt;/strong&gt; &lt;span id=&quot;lastUpdated&quot;&gt;&mdash;&lt;/span&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &lt;div&gt;&lt;a id=&quot;link&quot; href=&quot;#&quot; target=&quot;_blank&quot;&gt;Read full bill text &rarr;&lt;/a&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;h3&gt;Latest Actions&lt;/h3&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &lt;div class=&quot;list&quot; id=&quot;actions&quot;&gt;&lt;/div&gt;</span></p><p class="c1"><span class="c0">&nbsp; &lt;/div&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &lt;script&gt;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; async function loadBill(){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const congress=document.getElementById(&#39;congressInput&#39;).value.trim()||&#39;118&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const type=document.getElementById(&#39;billType&#39;).value;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const num=document.getElementById(&#39;billNumber&#39;).value.trim();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; if(!num) return alert(&#39;Enter bill number&#39;);</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; const url=`https://api.congress.gov/v3/bill/${congress}/${type}/${num}?format=json`;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; try{</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const r=await fetch(url);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if(!r.ok) throw new Error(&#39;Bad response&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const data=await r.json();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const bill=data.bill;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;billTitle&#39;).textContent=bill.title||bill.titleWithoutNumber||bill.number;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;summary&#39;).textContent=bill.summaries?.[0]?.text||&#39;&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;link&#39;).href=bill.url;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;lastUpdated&#39;).textContent=new Date().toLocaleString();</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Status</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const status=bill.latestAction?.text||&#39;No status&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const chip=document.getElementById(&#39;statusChip&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; chip.textContent=status;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Progress heuristic</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; let idx=0; const stages=[&#39;Introduced&#39;,&#39;In Committee&#39;,&#39;On Floor&#39;,&#39;Passed&#39;,&#39;To President&#39;,&#39;Enacted&#39;];</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if(status.toLowerCase().includes(&#39;pass&#39;)) idx=3;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if(status.toLowerCase().includes(&#39;enacted&#39;)) idx=5;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;bar&#39;).style.width=`${(idx/(stages.length-1))*100}%`;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Sponsor + party</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if(bill.sponsors?.[0]){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const s=bill.sponsors[0];</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;sponsor&#39;).textContent=`${s.fullName} (${s.state})`;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;party&#39;).textContent=s.partyName||s.partyCode||&#39;&mdash;&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Cosponsors</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;cosponsors&#39;).textContent=bill.cosponsors?bill.cosponsors.length:&#39;0&#39;;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Committees + subcommittees</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const commEl=document.getElementById(&#39;committees&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if(bill.committees?.length){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; commEl.innerHTML=bill.committees.map(c=&gt;{</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const chamber=c.chamber||&#39;&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const badge=chamber?`&lt;span class=\&quot;badge ${chamber.toLowerCase()}\&quot;&gt;${chamber}&lt;/span&gt;`:&#39;&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const subs=(c.subcommittees||[]).length?`&lt;div class=\&quot;subs\&quot;&gt;${c.subcommittees.map(s=&gt;`&#8627; ${s.name}`).join(&#39;&lt;br&gt;&#39;)}&lt;/div&gt;`:&#39;&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return `&lt;div class=\&quot;committee\&quot;&gt;${badge}${c.name}${subs}&lt;/div&gt;`;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }).join(&#39;&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; } else { commEl.textContent=&#39;&mdash;&#39;; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // ===== Extra fetches for full history &amp; subjects =====</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; let actionsArr = bill.actions || [];</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; let topicsArr = [];</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; try {</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const [actionsResp, subjectsResp] = await Promise.all([</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fetch(`https://api.congress.gov/v3/bill/${congress}/${type}/${num}/actions?format=json`),</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fetch(`https://api.congress.gov/v3/bill/${congress}/${type}/${num}/subjects?format=json`)</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ]);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(actionsResp &amp;&amp; actionsResp.ok){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const ad = await actionsResp.json();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; actionsArr = ad.actions || ad.bill?.actions || actionsArr;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(subjectsResp &amp;&amp; subjectsResp.ok){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const sd = await subjectsResp.json();</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; const raw = sd.subjects || sd.bill?.subjects || [];</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; topicsArr = raw.map(s =&gt; s?.name || s?.legislativeSubject || s).filter(Boolean);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; } catch (e) { /* fail soft and use bill fields */ }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Topics chips (fallback to any subjects on main payload)</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; if(!topicsArr.length &amp;&amp; Array.isArray(bill.subjects)){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; topicsArr = bill.subjects.map(s=&gt;s?.name || s).filter(Boolean);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; const uniqueTopics = Array.from(new Set(topicsArr)).slice(0,10);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;topics&#39;).innerHTML = uniqueTopics.map(t=&gt;`&lt;span class=\&quot;topic\&quot;&gt;${t}&lt;/span&gt;`).join(&#39;&#39;);</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; // Actions (latest first, prefer expanded list if available)</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;actions&#39;).innerHTML = (actionsArr||[]).slice(-12).reverse().map(a=&gt;`&lt;div class=\&quot;action\&quot;&gt;&lt;strong&gt;${new Date(a.actionDate || a.date || a.datetime || a.updateDate || Date.now()).toLocaleString()}&lt;/strong&gt;: ${a.text || a.description}&lt;/div&gt;`).join(&#39;&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;actions&#39;).innerHTML=(bill.actions||[]).slice(-8).reverse().map(a=&gt;`&lt;div class=&quot;action&quot;&gt;&lt;strong&gt;${new Date(a.actionDate).toLocaleDateString()}&lt;/strong&gt;: ${a.text}&lt;/div&gt;`).join(&#39;&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }catch(e){</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; console.error(e);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; alert(&#39;Error loading bill&#39;);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; }</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; }</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1"><span class="c0">&nbsp; &nbsp; document.getElementById(&#39;trackBtn&#39;).addEventListener(&#39;click&#39;,loadBill);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; document.getElementById(&#39;copyLinkBtn&#39;).addEventListener(&#39;click&#39;,()=&gt;{</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; navigator.clipboard.writeText(location.href).then(()=&gt;{</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; document.getElementById(&#39;copyLinkBtn&#39;).textContent=&#39;Copied!&#39;;</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; setTimeout(()=&gt;document.getElementById(&#39;copyLinkBtn&#39;).textContent=&#39;Copy link&#39;,1200);</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &nbsp; });</span></p><p class="c1"><span class="c0">&nbsp; &lt;/script&gt;</span></p><p class="c1"><span class="c0">&lt;/body&gt;</span></p><p class="c1"><span class="c0">&lt;/html&gt;</span></p><p class="c1 c2"><span class="c0"></span></p><p class="c1 c2"><span class="c0"></span></p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bill Tracker</title>
+  <style>
+    body { background:#000; color:#fff; font-family: system-ui, sans-serif; margin:0; }
+    .wrap { max-width:900px; margin:30px auto; padding:0 16px; }
+    h1 { font-size:1.6rem; margin-bottom:6px; }
+    .controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:end}
+    .controls input,.controls select{background:#0a1128;color:#fff;border:1px solid #333;border-radius:8px;padding:8px 10px;font-size:14px;min-width:96px}
+    .btn{background:#ee3a4a;color:#fff;border:none;padding:8px 14px;border-radius:8px;font-weight:700;cursor:pointer}
+    .btn.outline{background:transparent;border:1px solid #333}
+    .chip{display:inline-flex;align-items:center;gap:6px;background:#16171b;border:1px solid #333;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;text-transform:uppercase}
+    .chip.ok{border-color:#2ecc71;color:#b7ffcb}.chip.bad{border-color:#e74c3c;color:#ffc7c7}.chip.warn{border-color:#f39c12;color:#ffe5b7}
+    .barwrap{background:#090d18;border:1px solid #333;border-radius:999px;overflow:hidden;height:8px;margin:10px 0}
+    .bar{background:linear-gradient(90deg,#ee3a4a,#ff6a77);height:8px;width:0;transition:width .6s ease}
+    .meta{color:#a5aab4;font-size:14px;margin:8px 0}
+    .topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .topic{background:#0f1424;border:1px solid #333;border-radius:999px;padding:4px 10px;font-size:12px;color:#dbe6ff}
+    .comm-wrap{position:relative;margin-top:8px}
+    .comm-list{display:grid;gap:6px}
+    .committee{line-height:1.35}
+    .committee .subs{margin-left:14px;color:#a5aab4;font-size:13px;display:grid;gap:4px}
+    .badge{display:inline-block;font-size:11px;padding:2px 6px;border:1px solid #333;border-radius:999px;margin-right:6px;background:#0f1424}
+    .badge.house{border-color:rgba(59,130,246,.5)}.badge.senate{border-color:rgba(239,68,68,.5)}
+    .collapse{max-height:120px;overflow:hidden;position:relative}
+    .collapse.fade:after{content:"";position:absolute;left:0;right:0;bottom:0;height:48px;background:linear-gradient(180deg,rgba(0,0,0,0),#000)}
+    .toggle{margin-top:8px;font-size:12px;color:#7ab8ff;cursor:pointer;user-select:none}
+    .list{margin-top:12px;display:grid;gap:6px}
+    .action{font-size:14px;border-bottom:1px solid #222;padding-bottom:6px;margin-bottom:6px}
+    a{color:#7ab8ff;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 id="billTitle">Bill Tracker</h1>
+    <div class="controls">
+      <input id="congressInput" type="number" value="118" min="100" max="999" title="Congress" />
+      <select id="billType">
+        <option value="hr">HR</option>
+        <option value="hjres">HJRes</option>
+        <option value="sjres">SJRes</option>
+        <option value="s">S</option>
+      </select>
+      <input id="billNumber" type="number" placeholder="Bill number" />
+      <button class="btn" id="trackBtn">Track</button>
+      <button class="btn outline" id="copyLinkBtn">Copy link</button>
+    </div>
+
+    <div class="chip warn" id="statusChip">—</div>
+    <div class="barwrap"><div class="bar" id="bar"></div></div>
+
+    <div class="meta" id="summary"></div>
+    <div class="topics" id="topics"></div>
+
+    <div class="list">
+      <div><strong>Sponsor:</strong> <span id="sponsor">—</span></div>
+      <div><strong>Party:</strong> <span id="party">—</span></div>
+      <div><strong>Cosponsors:</strong> <span id="cosponsors">—</span></div>
+      <div><strong>Committees:</strong> <div id="committees">—</div></div>
+      <div><strong>Last Updated:</strong> <span id="lastUpdated">—</span></div>
+      <div><a id="link" href="#" target="_blank">Read full bill text →</a></div>
+    </div>
+
+    <h3>Latest Actions</h3>
+    <div class="list" id="actions"></div>
+  </div>
+
+  <script>
+    async function loadBill(){
+      const congress=document.getElementById('congressInput').value.trim()||'118';
+      const type=document.getElementById('billType').value;
+      const num=document.getElementById('billNumber').value.trim();
+      if(!num) return alert('Enter bill number');
+
+      const url=`https://api.congress.gov/v3/bill/${congress}/${type}/${num}?format=json`;
+      try{
+        const r=await fetch(url);
+        if(!r.ok) throw new Error('Bad response');
+        const data=await r.json();
+        const bill=data.bill;
+
+        document.getElementById('billTitle').textContent=bill.title||bill.titleWithoutNumber||bill.number;
+        document.getElementById('summary').textContent=bill.summaries?.[0]?.text||'';
+        document.getElementById('link').href=bill.url;
+        document.getElementById('lastUpdated').textContent=new Date().toLocaleString();
+
+        const status=bill.latestAction?.text||'No status';
+        const chip=document.getElementById('statusChip');
+        chip.textContent=status;
+
+        let idx=0; const stages=['Introduced','In Committee','On Floor','Passed','To President','Enacted'];
+        if(status.toLowerCase().includes('pass')) idx=3;
+        if(status.toLowerCase().includes('enacted')) idx=5;
+        document.getElementById('bar').style.width=`${(idx/(stages.length-1))*100}%`;
+
+        if(bill.sponsors?.[0]){
+          const s=bill.sponsors[0];
+          document.getElementById('sponsor').textContent=`${s.fullName} (${s.state})`;
+          document.getElementById('party').textContent=s.partyName||s.partyCode||'—';
+        }
+
+        document.getElementById('cosponsors').textContent=bill.cosponsors?bill.cosponsors.length:'0';
+
+        const commEl=document.getElementById('committees');
+        if(bill.committees?.length){
+          commEl.innerHTML=bill.committees.map(c=>{
+            const chamber=c.chamber||'';
+            const badge=chamber?`<span class="badge ${chamber.toLowerCase()}">${chamber}</span>`:'';
+            const subs=(c.subcommittees||[]).length?`<div class="subs">${c.subcommittees.map(s=>`↳ ${s.name}`).join('<br>')}</div>`:'';
+            return `<div class="committee">${badge}${c.name}${subs}</div>`;
+          }).join('');
+        } else { commEl.textContent='—'; }
+
+        // Extra fetches for full history and subjects
+        let actionsArr = bill.actions || [];
+        let topicsArr = [];
+        try {
+          const [actionsResp, subjectsResp] = await Promise.all([
+            fetch(`https://api.congress.gov/v3/bill/${congress}/${type}/${num}/actions?format=json`),
+            fetch(`https://api.congress.gov/v3/bill/${congress}/${type}/${num}/subjects?format=json`)
+          ]);
+          if(actionsResp && actionsResp.ok){
+            const ad = await actionsResp.json();
+            actionsArr = ad.actions || ad.bill?.actions || actionsArr;
+          }
+          if(subjectsResp && subjectsResp.ok){
+            const sd = await subjectsResp.json();
+            const raw = sd.subjects || sd.bill?.subjects || [];
+            topicsArr = raw.map(s => s?.name || s?.legislativeSubject || s).filter(Boolean);
+          }
+        } catch (e) { }
+
+        if(!topicsArr.length && Array.isArray(bill.subjects)){
+          topicsArr = bill.subjects.map(s=>s?.name || s).filter(Boolean);
+        }
+        const uniqueTopics = Array.from(new Set(topicsArr)).slice(0,10);
+        document.getElementById('topics').innerHTML = uniqueTopics.map(t=>`<span class="topic">${t}</span>`).join('');
+
+        document.getElementById('actions').innerHTML=(actionsArr||[]).slice(-12).reverse().map(a=>`<div class="action"><strong>${new Date(a.actionDate || a.date || a.datetime || a.updateDate || Date.now()).toLocaleString()}</strong>: ${a.text || a.description}</div>`).join('');
+      }catch(e){
+        console.error(e);
+        alert('Error loading bill');
+      }
+    }
+
+    document.getElementById('trackBtn').addEventListener('click',loadBill);
+    document.getElementById('copyLinkBtn').addEventListener('click',()=>{
+      navigator.clipboard.writeText(location.href).then(()=>{
+        document.getElementById('copyLinkBtn').textContent='Copied!';
+        setTimeout(()=>document.getElementById('copyLinkBtn').textContent='Copy link',1200);
+      });
+    });
+  </script>
+</body>
+</html>
